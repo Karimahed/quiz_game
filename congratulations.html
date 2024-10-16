@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+</head>
+<body>
+<div class="fixed-box">
+    <div class="congratulations-container">
+        <h1>Congratulations, You Passed the Test!</h1>
+        <p>Click here to reveal the surprise!</p>
+        <button id="revealButton">Reveal Surprise</button>
+    </div>
+</div>
+
+<audio id="congratulationsSound">
+    <source src="congratulations.mp3" type="audio/mpeg"> <!-- Replace with your audio file -->
+    Your browser does not support the audio element.
+</audio>
+
+
+<audio id="clapping">
+    <source src="clapping.mp3" type="audio/mpeg"> <!-- Replace with your audio file -->
+    Your browser does not support the audio element.
+</audio>
+
+
+<audio id="bomb">
+    <source src="generationbomb.mp3" type="audio/mpeg"> <!-- Replace with your audio file -->
+    Your browser does not support the audio element.
+</audio>
+
+
+
+<script>
+    // Play congratulations sound when the page loads
+    window.onload = function() {
+        const congratulationsSound = document.getElementById("congratulationsSound");
+        congratulationsSound.play();
+        const clapping = document.getElementById("clapping");
+        clapping.play();
+        const bomb= document.getElementById("bomb");
+        bomb.play();
+    };
+
+    // Redirect to the surprise page on button click
+    document.getElementById("revealButton").addEventListener("click", () => {
+        window.location.href = "surprise.html"; // Redirect to surprise page
+    });
+</script>
+</body>
+</html>

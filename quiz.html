@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+</head>
+<body>
+<div class="fixed-box"> <!-- Fixed-size container for quiz -->
+    <div class="quiz-container">
+        <h1>Quiz Questions</h1> <!-- Heading above the box -->
+        <div id="questionText"></div>
+        <div id="result"></div>
+        <div class="button-container"> <!-- Container for buttons -->
+            <button id="trueButton">True</button>
+            <button id="falseButton">False</button>
+        </div>
+        <button id="continueButton" style="display: none;">Continue</button> <!-- Hidden continue button -->
+    </div>
+</div>
+
+<audio id="backgroundAudio" loop>
+    <source src="background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="correctSound">
+    <source src="correct.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="wrongSound">
+    <source src="wrong.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="newQuestionSound">
+    <source src="newQuestion.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="game.js"></script>
+</body>
+</html>

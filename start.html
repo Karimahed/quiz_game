@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start the Game</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS -->
+</head>
+<body>
+<div class="fixed-box"> <!-- Fixed-size box -->
+    <h1>Start the Game</h1>
+    <button id="startButton">Start Playing</button>
+    <audio id="backgroundAudio" loop>
+        <source src="background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<script>
+    const startButton = document.getElementById("startButton");
+    const backgroundAudio = document.getElementById("backgroundAudio");
+
+    startButton.addEventListener("click", () => {
+        backgroundAudio.play(); // Start playing background music
+        window.location.href = "quiz.html"; // Redirect to the quiz page
+    });
+</script>
+</body>
+</html>

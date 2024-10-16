@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, skyblue, limegreen);
+    color: black;
+}
+
+.fixed-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.surprise-container {
+    display: flex;
+    width: 80%; /* Adjust width as needed */
+    max-width: 1200px; /* Max width for larger screens */
+}
+
+.column {
+    flex: 1; /* Each column takes equal space */
+    text-align: center;
+    padding: 20px; /* Padding around columns */
+}
+
+.left-column img,
+.right-column video {
+    max-width: 100%; /* Responsive images and video */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.celebration-image {
+    margin-top: 20px; /* Space between text and new image */
+    width: 100%; /* Responsive image */
+    max-width: 300px; /* Max width for the new image */
+    height: auto; /* Maintain aspect ratio */
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise!</title>
+    <link rel="stylesheet" href="surprise.css"> <!-- Link to your CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+            background: linear-gradient(to right, skyblue, limegreen);
+        }
+
+        .fixed-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .surprise-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .column {
+            width: 30%;
+        }
+
+        .middle-column {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Fireworks styles */
+        .firework {
+            position: absolute;
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            opacity: 0;
+            pointer-events: none; /* Prevent interaction */
+        }
+
+        @keyframes explode {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-300px); opacity: 0; }
+        }
+
+        .firework-animation {
+            animation: explode 1s forwards;
+        }
+    </style>
+</head>
+<body>
+<div class="fixed-box">
+    <div class="surprise-container">
+        <div class="column left-column">
+            <img src="image1.jpg" alt="Celebration Image 1">
+        </div>
+
+        <div class="column middle-column">
+            <h1>Surprise!</h1>
+            <p>مبروك القبول يارب وعقبال التخرج ان شاء الله!</p>
+            <img src="image2.jpg" alt="Celebration Cake" style="width: 80%; margin-top: 20px;">
+        </div>
+
+        <div class="column right-column">
+            <video width="300" controls autoplay loop>
+                <source src="vid1.mp4" type="video/mp4"> <!-- Replace with your video file -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
+
+<audio id="celebrationSound" loop>
+    <source src="celebration.mp3" type="audio/mpeg"> <!-- Replace with your audio file -->
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    // Play celebration sound when the page loads
+    window.onload = function() {
+        const celebrationSound = document.getElementById("celebrationSound");
+        celebrationSound.play();
+        createFireworks();
+    };
+
+    function createFireworks() {
+        const fireworksContainer = document.createElement('div');
+        document.body.appendChild(fireworksContainer);
+
+        const fireworkCount = 10; // Number of fireworks to create
+
+        for (let i = 0; i < fireworkCount; i++) {
+            const firework = document.createElement('img');
+            firework.src = 'firework.png'; // Replace with your firework image
+            firework.className = 'firework';
+            firework.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            firework.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+            fireworksContainer.appendChild(firework);
+
+            setTimeout(() => {
+                firework.classList.add('firework-animation');
+                firework.style.opacity = 1; // Fade in the firework
+            }, i * 500); // Stagger the animations
+
+            setTimeout(() => {
+                firework.remove(); // Remove firework after animation
+            }, 2000); // Duration before removing
+        }
+    }
+</script>
+</body>
+</html>

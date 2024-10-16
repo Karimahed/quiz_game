@@ -1,0 +1,104 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, skyblue, limegreen);
+}
+
+/* Fixed-size container for quiz and start page */
+.fixed-box {
+    width: 400px; /* Fixed width for the box */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center; /* Center the heading */
+    color: black; /* Change text color */
+    margin-bottom: 20px; /* Space between heading and box */
+}
+
+/* Quiz container */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Question text styles */
+#questionText {
+    font-size: 30px; /* Larger font size for questions */
+    color: black; /* Change text color to black */
+    margin-bottom: 20px;
+}
+
+/* Result message styles */
+#result {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Button container styles */
+.button-container {
+    display: flex; /* Align buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007BFF; /* Bootstrap Primary Color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+/* Audio controls (optional) */
+audio {
+    display: none; /* Hide audio controls */
+}
+
+/* Styles for the end message */
+#endMessage {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+/* Additional styles for surprise page */
+.surprise-container {
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.images img {
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+    margin: 0 10px; /* Space between images */
+}
+
+video {
+    width: 100%; /* Full width responsive */
+    max-width: 600px; /* Maximum width */
+}
